@@ -1,10 +1,5 @@
-﻿namespace InventoryData
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
-    }
-}
+﻿using InventoryData.Repository;
+
+Console.WriteLine("Hello, World!");
+InventoryManager inventoryManager = new InventoryManager();
+inventoryManager.CalculateInventoryValue();
