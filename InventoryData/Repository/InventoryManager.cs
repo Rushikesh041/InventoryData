@@ -18,17 +18,30 @@ namespace InventoryData.Repository
             var jsonData = File.ReadAllText(FilePath);
            
             var inventoryData = JsonConvert.DeserializeObject<InventoryModel>(jsonData);
-            Console.WriteLine(
-                "Name : " + inventoryData.Rice.Name + "\n" +
-                "Weight : " + inventoryData.Rice.Weight + "\n" +
-                "PricePerKG : " + inventoryData.Rice.PricePerKG + "\n\n" +
-                "Name : " + inventoryData.Wheats.Name + "\n" +
-                "Weight : " + inventoryData.Wheats.Weight + "\n" +
-                "PricePerKG : " + inventoryData.Wheats.PricePerKG + "\n\n" +
-                "Name : " + inventoryData.Pulses.Name + "\n" +
-                "Weight : " + inventoryData.Pulses.Weight + "\n" +
-                "PricePerKG : " + inventoryData.Pulses.PricePerKG + "\n"
-                );
+            foreach (var Rice in inventoryData.Rice)
+            {
+                Console.Write("Name : " + Rice.Name + "\n" +
+                "Weight : " + Rice.Weight + "\n" +
+                "PricePerKG : " + Rice.PricePerKG + "\n");
+
+                Console.WriteLine($"Total Price Of {Rice.Name} is : {Rice.Weight * Rice.PricePerKG} \n");
+            }
+            foreach (var Wheats in inventoryData.Wheats)
+            {
+                Console.Write("Name : " + Wheats.Name + "\n" +
+                "Weight : " + Wheats.Weight + "\n" +
+                "PricePerKG : " + Wheats.PricePerKG + "\n");
+
+                Console.WriteLine($"Total Price Of {Wheats.Name} is : {Wheats.Weight * Wheats.PricePerKG} \n");
+            }
+            foreach (var Pulses in inventoryData.Pulses)
+            {
+                Console.Write("Name : " + Pulses.Name + "\n" +
+                "Weight : " + Pulses.Weight + "\n" +
+                "PricePerKG : " + Pulses.PricePerKG + "\n");
+
+                Console.WriteLine($"Total Price Of {Pulses.Name} is : {Pulses.Weight * Pulses.PricePerKG} \n");
+            }
 
             Console.WriteLine("Data: \n"+jsonData);
         }

@@ -1,5 +1,11 @@
 ﻿using InventoryData.Repository;
 
-Console.WriteLine("Hello, World!");
-InventoryManager inventoryManager = new InventoryManager();
-inventoryManager.CalculateInventoryValue();
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+        InventoryManager inventoryManager = new InventoryManager();
+        inventoryManager.CalculateInventoryValue();
+    }
+}
